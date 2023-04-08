@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='global.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='booking-details-for-customer.css') }}" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap"
+    />
+  </head>
+  <body>
+    <div class="booking-details-for-customer">
+      <nav class="profile-navbar3">
+        <div class="group-container">
+          <img
+            class="frame-child1"
+            alt=""
+            src="{{ url_for('static', filename='group-28.svg') }}"
+            id="groupIcon"
+          />
+          <div class="dashboard6" id="dashboardText">Dashboard</div>
+        </div>
+        <img class="wot-01-1-icon12" alt="" src="{{ url_for('static', filename='wot01-12@2x.png') }}" />
+        <div class="bookings-parent3">
+          <div class="bookings6" id="bookingsText">Bookings</div>
+          <img
+            class="group-icon7"
+            alt=""
+            src="{{ url_for('static', filename='group3.svg') }}"
+            id="groupIcon1"
+          />
+        </div>
+      </nav>
+      {% block details %}{% endblock %}
+    </div>
+
+    <script>
+      var groupIcon = document.getElementById("groupIcon");
+      if (groupIcon) {
+        groupIcon.addEventListener("click", function (e) {
+          window.location.href = "{{ url_for('bkc') }}";
+        });
+      }
+      
+      var dashboardText = document.getElementById("dashboardText");
+      if (dashboardText) {
+        dashboardText.addEventListener("click", function (e) {
+          window.location.href = "{{ url_for('dashboard') }}";
+        });
+      }
+      
+      var bookingsText = document.getElementById("bookingsText");
+      if (bookingsText) {
+        bookingsText.addEventListener("click", function (e) {
+          window.location.href = "{{ url_for('bkc') }}";
+        });
+      }
+      
+      var groupIcon1 = document.getElementById("groupIcon1");
+      if (groupIcon1) {
+        groupIcon1.addEventListener("click", function (e) {
+          window.location.href = "{{ url_for('mpc') }}";
+        });
+      }
+      </script>
+  </body>
+</html>

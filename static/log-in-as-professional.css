@@ -1,0 +1,117 @@
+.wot-01-1-icon5 {
+  width: 345px;
+  height: 196px;
+  flex-shrink: 0;
+  object-fit: cover;
+  cursor: pointer;
+}
+.log-in-as1,
+.username7,
+.wot-01-1-icon5 {
+  position: relative;
+}
+.username7 {
+  border: 0;
+  background-color: var(--color-gray);
+  border-radius: var(--br-8xs);
+  width: 345px;
+  height: 57px;
+  flex-shrink: 0;
+}
+.frame-parent5,
+.password-parent1,
+.username-parent1 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-xs);
+}
+.frame-parent5,
+.password-parent1 {
+  gap: var(--gap-sm);
+}
+.frame-parent5 {
+  text-align: left;
+  font-size: var(--font-size-xl);
+}
+.log-in1 {
+  position: relative;
+  font-size: var(--font-size-5xl);
+  font-family: var(--font-roboto);
+  color: var(--color-white);
+  text-align: center;
+  display: inline-block;
+  width: 66px;
+  height: 28px;
+  flex-shrink: 0;
+}
+.log-in-container {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-lgi) var(--padding-30xl);
+  background-color: var(--color-limegreen);
+  border-radius: var(--br-3xs);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.log-in-container:hover {
+  background-color: var(--color-forestgreen);
+}
+.span1 {
+  text-decoration: underline;
+  color: var(--color-slateblue);
+}
+.dont-have-an-container1,
+.sign-up3 {
+  position: relative;
+  display: inline-block;
+  width: 185px;
+  height: 21px;
+  flex-shrink: 0;
+}
+.sign-up3 {
+  text-decoration: underline;
+  /* color: var(--color-slateblue); */
+  color:rgb(26, 20, 150);
+  width: 64px;
+  cursor: pointer;
+}
+.dont-have-an-account-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-12xs);
+  font-size: var(--font-size-lg);
+}
+.log-in-as-professional-parent,
+.wot-01-1-parent1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-13xl);
+}
+.wot-01-1-parent1 {
+  position: absolute;
+  top: 51px;
+  left: calc(50% - 173px);
+  align-items: flex-start;
+  gap: var(--gap-87xl);
+}
+.log-in-as-professional {
+  position: relative;
+  background: radial-gradient(50% 50%at 50% 50%, #efeef2, #8b78b2);
+  border: 1px solid var(--color-black);
+  box-sizing: border-box;
+  width: 100%;
+  height: 1024px;
+  overflow: hidden;
+  text-align: center;
+  font-size: var(--font-size-11xl);
+  color: var(--color-black);
+  font-family: var(--font-roboto);
+}

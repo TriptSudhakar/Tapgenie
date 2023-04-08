@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='global.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='my-profile-of-customer.css') }}" />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+   
+  <style>
+    /* Styling the date input field */
+    input[type="date"] {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      outline: none;
+      font-size: 16px;
+    }
+
+    /* Styling the time input field */
+    input[type="time"] {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      outline: none;
+      font-size: 16px;
+    }
+
+    /* Styling the selected date */
+    input[type="date"]::-webkit-calendar-picker-indicator {
+      color: #007bff; /* Change to your desired color */
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    /* Styling the selected time */
+    input[type="time"]::-webkit-calendar-picker-indicator {
+      color: #007bff; /* Change to your desired color */
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+
+  </head>
+  <body>
+    <div class="schedule-appointments">
+      <nav class="profile-navbar">
+        <div class="group-parent">
+          <img
+            class="frame-child"
+            alt=""
+            src="{{ url_for('static', filename='group-28.svg') }}"
+            id="groupIcon"
+          />
+          <div class="dashboard" id="dashboardText">Dashboard</div>
+        </div>
+        <img class="wot-01-1-icon" alt="" src="{{ url_for('static', filename='wot01-12@2x.png') }}" />
+        <div class="bookings-parent">
+          <div class="bookings" id="bookingsText">Bookings</div>
+          <img
+            class="group-icon"
+            alt=""
+            src="{{ url_for('static', filename='group.svg') }}"
+            id="groupIcon1"
+          />
+        </div>
+      </nav>
+      
+      <div class="frame-parent">
+        
+        <div class="service-haircut-parent">
+          <div class="service-haircut">Service : {{ service.Service_name }}</div>
+          <div class="parent">
+            <div class="service-haircut">₹{{ service.Price }}</div>
+            <div class="group">
+              <div class="service-haircut">{{ service.Rating }}</div>
+              <img class="vector-icon" alt="" src="{{ url_for('static', filename='vector1.svg') }}" />
+            </div>
+          </div>
+      </div>
+
+
+          <div class="username8">
+            <div class="name-john-smith-parent">
+               <!-- <form action="{{ url_for('index2') }}" method="POST">
+                <div class="username-whojohnjohn-container">
+
+                  <label for="datepicker">Date:</label>
+                  <input type="date" id="datepicker" name="datepicker" required>
+    
+    
+                  <label for="dropdown">Select time:</label>
+                  <select name="dropdown" id="dropdown" required>
+                    <option value="option1"> 9:00am to 11:00am</option>
+                    <option value="option2">12:00pm to 2:00pm</option>
+                    <option value="option3">3:00pm to 5:00pm</option>
+                    <option value="option3">6:00pm to 8:00pm</option>
+                  </select>
+    
+                </form> -->
+                <form action= "{{url_for('index2',id = service.Service_ID)}}" method="post">
+                  <label for="datepicker">Select a date and time:</label>
+                  <input type="date" id="datepicker" name="datepicker" required>
+                  <label for="color">Choose a slot:</label>
+                <select id="color" name="color">
+                  <option value=1>9:00 am to 11:00 am</option>
+                  <option value=2>12:00 pm to 2:00 pm</option>
+                  <option value=3>3:00 pm to 5:00 pm</option>
+                  <option value=4>6:00 pm to 8:00 pm</option>
+                </select>
+                  <input type="submit" class="edit-wrapper" value="Submit">
+              </form>
+
+              
+              
+                </div>
+    
+                <!-- <a href="{{ url_for('update') }}"><button class="edit-wrapper"><div class="edit">EDIT</div></button></a> -->
+                <!-- <input type="submit" class="edit-wrapper" value="Find available professionals"> -->
+              <!-- </div> -->
+            
+          <!-- </div> -->
+        </div>
+        <div class="available-professionals">Available Professionals</div>
+        {% block prof %}{% endblock %}
+      </div>
+    </div>
+
+    <script>
+      var groupIcon = document.getElementById("groupIcon");
+      if (groupIcon) {
+        groupIcon.addEventListener("click", function (e) {
+          window.location.href = "{{ url_for('bandw') }}";
+        });
+      }
+      
+      var dashboardText = document.getElementById("dashboardText");
+      if (dashboardText) {
+        dashboardText.addEventListener("click", function (e) {
+          window.location.href = "{{ url_for('dashboard') }}";
+        });
+      }
+      
+      var bookingsText = document.getElementById("bookingsText");
+      if (bookingsText) {
+        bookingsText.addEventListener("click", function (e) {
+          window.location.href = "{{ url_for('bkc') }}";
+        });
+      }
+      
+      var groupIcon1 = document.getElementById("groupIcon1");
+      if (groupIcon1) {
+        groupIcon1.addEventListener("click", function (e) {
+          window.location.href = "{{ url_for('mpc') }}";
+        });
+      }
+      
+      var frameButton = document.getElementById("frameButton");
+      if (frameButton) {
+        frameButton.addEventListener("click", function (e) {
+          window.location.href = "{{ url_for('ckc') }}";
+        });
+      }
+      
+      var frameButton1 = document.getElementById("frameButton1");
+      if (frameButton1) {
+        frameButton1.addEventListener("click", function (e) {
+          window.location.href = "{{ url_for('ckc') }}";
+        });
+      }
+      flatpickr("input[type=datetime-local]",config);
+      </script>
+  </body>
+</html>

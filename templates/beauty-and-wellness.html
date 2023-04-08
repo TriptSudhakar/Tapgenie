@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='global.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='beauty-and-wellness.css') }}" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap"
+    />
+  </head>
+  <body>
+    <div class="beauty-and-wellness1">
+      <nav class="dashboard-navbar1">
+        <div class="group-parent2">
+          <img
+            class="frame-child3"
+            alt=""
+            src="{{ url_for('static', filename='group-28.svg') }}"
+            id="groupIcon"
+          />
+          <div class="dashboard-group">
+            <b class="dashboard7" id="dashboardText">Dashboard</b>
+            <div class="frame-child4"></div>
+          </div>
+        </div>
+        <img class="wot-01-1-icon14" alt="" src="{{ url_for('static', filename='wot01-12@2x.png') }}" />
+        <div class="bookings-parent4">
+          <div class="bookings7" id="bookingsText">Bookings</div>
+          <img
+            class="group-icon9"
+            alt=""
+            src="{{ url_for('static', filename='group.svg') }}"
+            id="groupIcon1"
+          />
+        </div>
+      </nav>
+      <div class="beauty-and-wellness-parent">
+        {% block title %}{% endblock %}
+        <div class="frame-parent19">
+          {% block content %}{% endblock %}
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var groupIcon = document.getElementById("groupIcon");
+      if (groupIcon) {
+        groupIcon.addEventListener("click", function (e) {
+          window.location.href = "{{ url_for('dashboard') }}";
+        });
+      }
+      
+      var dashboardText = document.getElementById("dashboardText");
+      if (dashboardText) {
+        dashboardText.addEventListener("click", function (e) {
+          window.location.href = "{{ url_for('dashboard') }}";
+        });
+      }
+      
+      var bookingsText = document.getElementById("bookingsText");
+      if (bookingsText) {
+        bookingsText.addEventListener("click", function (e) {
+          window.location.href = "{{ url_for('bkc') }}";
+        });
+      }
+      
+      var groupIcon1 = document.getElementById("groupIcon1");
+      if (groupIcon1) {
+        groupIcon1.addEventListener("click", function (e) {
+          window.location.href = "{{ url_for('mpc') }}";
+        });
+      }
+      </script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+{% extends "booking-details-for-customer.html" %}
+{% block details %}
+<div class="booking-details-parent">
+<div class="booking-details">Booking Details</div>
+<div class="category-beauty-and-wellness-wrapper">
+    <div class="category-beauty-and-container">
+    <p class="category-beauty-and-wellness">
+        <b class="category">Category</b><span>: {{ appointment.Service_ID | service_category }}</span>
+    </p>
+    <p class="category-beauty-and-wellness">&nbsp;</p>
+    <p class="category-beauty-and-wellness">
+        <b class="category">Service</b><span> : {{ appointment.Service_ID | service_name }}</span>
+    </p>
+    <p class="category-beauty-and-wellness">&nbsp;</p>
+    <p class="category-beauty-and-wellness">
+        <b class="category">Booking ID </b><span>: {{ appointment.appointment_ID }}</span>
+    </p>
+    <p class="category-beauty-and-wellness">&nbsp;</p>
+    <p class="category-beauty-and-wellness">
+        <span class="date1">Date : </span><span>{{ appointment.appointment_date }}</span>
+    </p>
+    <p class="blank-line6">&nbsp;</p>
+    <p class="category-beauty-and-wellness">
+        <span class="date1">Time : </span><span>{{ appointment.appointment_time }}</span>
+    </p>
+    <p class="category-beauty-and-wellness">&nbsp;</p>
+    <p class="category-beauty-and-wellness">
+        <b class="category">Price </b><span>: ₹{{ appointment.price }}</span>
+    </p>
+    <p class="category-beauty-and-wellness">&nbsp;</p>
+    <p class="category-beauty-and-wellness">
+        <b>Name of professional</b
+        ><span class="category"> : {{ appointment.Professional_ID | pname }}</span>
+    </p>
+    <p class="category-beauty-and-wellness">&nbsp;</p>
+    <p class="category-beauty-and-wellness">
+        <b class="category">Contact</b><span> : {{ appointment.Professional_ID | pmobile }}</span>
+    </p>
+    </div>
+</div>
+</div>
+{% endblock details %}

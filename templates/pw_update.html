@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='global.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='my-profile-of-customer.css') }}" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap"
+    />
+
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    
+    
+  </head>
+  <body>
+    <div class="my-profile-of-customer">
+      <nav class="profile-navbar1">
+        <div class="dashboard1" id="dashboardText">Dashboard</div>
+        <img class="wot-01-1-icon6" alt="" src="{{ url_for('static', filename='wot01-12@2x.png') }}" />
+        <div class="bookings-group">
+          <div class="bookings1" id="bookingsText">Bookings</div>
+          <img class="group-icon1" alt="" src="{{ url_for('static', filename='group.svg') }}" />
+        </div>
+      </nav>
+      <div class="my-profile-parent">
+        <div class="my-profile">My Profile</div>
+        <div class="username8">
+          <div class="username-whojohnjohn-container">
+            <span class="phone-number">Email ID : </span
+            ><span> {{account['email_ID']}}</span>
+          </div>
+        </div>
+        
+        
+          
+  
+        <div class="name-john-smith-parent">
+          <div class="username-whojohnjohn-container">
+            <span class="phone-number">Name : </span
+            ><span>{{account['name']}}</span>
+          </div>
+        </div>
+        <div class="name-john-smith-parent">
+          <div class="username-whojohnjohn-container">
+            <span class="phone-number">Phone Number : </span><span>{{account['mobile_no']}}</span>
+          </div>
+        </div>
+        
+        <div class="name-john-smith-parent">
+          <div class="username-whojohnjohn-container">
+            <span class="phone-number">Address : </span
+            ><span>{{account['address']}}<span>
+          </div>
+          
+        </div>
+        <div class="username8">
+            <div class="name-john-smith-parent"> <form action="{{ url_for('update4') }}" method="POST">
+                <div class="username-whojohnjohn-container">
+                  <span class="phone-number">Password : </span><span><input type="text" name="password" placeholder="Enter New Password" class="hello"  id="username" required>
+                  </span>
+                
+                </div>
+    
+                <!-- <a href="{{ url_for('update') }}"><button class="edit-wrapper"><div class="edit">EDIT</div></button></a> -->
+                <input type="submit" class="edit-wrapper" value="Update"></form></div>
+    </div>
+      </div>
+    </div>
+
+    <script>
+      var dashboardText = document.getElementById("dashboardText");
+      if (dashboardText) {
+        dashboardText.addEventListener("click", function (e) {
+          window.location.href = "{{ url_for('dashboard') }}";
+        });
+      }
+      
+      var bookingsText = document.getElementById("bookingsText");
+      if (bookingsText) {
+        bookingsText.addEventListener("click", function (e) {
+          window.location.href = "{{ url_for('bkc') }}";
+        });
+      }
+      
+      var signOutText = document.getElementById("signOutText");
+      if (signOutText) {
+        signOutText.addEventListener("click", function (e) {
+          window.location.href = "{{ url_for('logout') }}";
+        });
+      }
+      </script>
+  </body>
+</html>

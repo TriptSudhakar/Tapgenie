@@ -1,0 +1,123 @@
+.dashboard6,
+.frame-child1 {
+  position: relative;
+  cursor: pointer;
+}
+.frame-child1 {
+  width: 45px;
+  height: 40px;
+  flex-shrink: 0;
+}
+.dashboard6 {
+  font-size: var(--font-size-7xl);
+  font-family: var(--font-roboto);
+  color: var(--color-white);
+  text-align: left;
+}
+.group-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-3xs);
+}
+.wot-01-1-icon12 {
+  position: relative;
+  width: 118px;
+  height: 61px;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.bookings6,
+.group-icon7 {
+  position: relative;
+  cursor: pointer;
+}
+.bookings6 {
+  font-size: var(--font-size-7xl);
+  font-family: var(--font-roboto);
+  color: var(--color-white);
+  text-align: center;
+}
+.group-icon7 {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+}
+.bookings-parent3,
+.profile-navbar3 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.bookings-parent3 {
+  width: 184px;
+  flex-shrink: 0;
+}
+.profile-navbar3 {
+  align-self: stretch;
+  background-color: var(--color-black);
+  overflow: hidden;
+  padding: var(--padding-6xs) var(--padding-9xl);
+}
+.booking-details {
+  position: relative;
+  font-weight: 500;
+}
+.category {
+  font-family: var(--font-roboto);
+}
+.category-beauty-and-wellness {
+  margin: 0;
+}
+.date1 {
+  font-weight: 600;
+  font-family: var(--font-roboto);
+}
+.blank-line6 {
+  margin: 0;
+  font-weight: 600;
+}
+.category-beauty-and-container {
+  align-self: stretch;
+  position: relative;
+  display: inline-block;
+  height: 402px;
+  flex-shrink: 0;
+}
+.booking-details-parent,
+.category-beauty-and-wellness-wrapper {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.category-beauty-and-wellness-wrapper {
+  background-color: var(--color-lavender);
+  padding: var(--padding-11xl);
+  text-align: left;
+  font-size: var(--font-size-xl);
+}
+.booking-details-parent {
+  padding: 0 var(--padding-281xl) var(--padding-131xl);
+  gap: var(--gap-42xl);
+}
+.booking-details-for-customer {
+  position: relative;
+  background-color: var(--color-thistle-200);
+  border: 1px solid var(--color-black);
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 59px;
+  text-align: center;
+  font-size: var(--font-size-11xl);
+  color: var(--color-black);
+  font-family: var(--font-roboto);
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='global.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='my-profile-of-professional.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='my-profile-of-customer.css') }}" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap"
+    />
+  </head>
+  <body>
+    <div class="my-profile-of-professional">
+      <nav class="appointments-parent">
+        <div class="appointments" id="appointmentsText">Appointments</div>
+        <div class="wot-01-1-wrapper">
+          <img class="wot-01-1-icon7" alt="" src="{{ url_for('static', filename='wot01-12@2x.png') }}" />
+        </div>
+        <img class="group-icon2" alt="" src="{{ url_for('static', filename='group1.svg') }}" />
+      </nav>
+      <div class="my-profile-group">
+        <div class="my-profile1">My Profile</div>
+        <div class="sign-out1" id="signOutText">Sign out</div>
+        <div class="username-johnysmith204-wrapper">
+          <div class="username-johnysmith204-container">
+            <span class="username10">Email ID : </span
+            ><span> {{account['email_ID']}}</span>
+          </div>
+        </div>
+        <div class="name-john-smith-group">
+          <div class="username-johnysmith204-container">
+            <span class="username10">Name : </span><span>{{account['name']}}</span>
+          </div>
+          <a href="{{ url_for('updateP') }}"><button class="edit-wrapper"><div class="edit">EDIT</div></button></a>
+        </div>
+        <div class="name-john-smith-group">
+          <div class="username-johnysmith204-container">
+            <span class="username10">Phone Number : </span
+            ><span>{{account['mobile_no']}}</span>
+          </div>
+          <a href="{{ url_for('update2P') }}"><button class="edit-wrapper"><div class="edit">EDIT</div></button></a>
+        </div>
+        <div class="name-john-smith-group">
+          <div class="username-johnysmith204-container">
+            <span class="username10">Profession : </span><span>{{account['profession']}}</span>
+          </div>
+          <a href="{{ url_for('update3P') }}"><button class="edit-wrapper"><div class="edit">EDIT</div></button></a>
+        </div>
+        
+        <div class="name-john-smith-group">
+          <div class="username-johnysmith204-container">
+            <span class="username10">Password : </span
+            ><span>*************</span>
+          </div>
+          <a href="{{ url_for('update4P') }}"><button class="edit-wrapper"><div class="edit">EDIT</div></button></a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var appointmentsText = document.getElementById("appointmentsText");
+      if (appointmentsText) {
+        appointmentsText.addEventListener("click", function (e) {
+          window.location.href = "{{ url_for('appointment') }}";
+        });
+      }
+      
+      var signOutText = document.getElementById("signOutText");
+      if (signOutText) {
+        signOutText.addEventListener("click", function (e) {
+          window.location.href = "{{ url_for('logoutP') }}";
+        });
+      }
+      </script>
+  </body>
+</html>

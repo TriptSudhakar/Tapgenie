@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{{ url_for('static', filename='global.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='create-account-as-professional.css') }}" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap"
+    />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+  </head>
+  <body>
+    <div class="create-account-as-professional">
+      <form  action="{{ url_for('signupP') }}" method="POST">
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+      <div class="wot-01-1-container">
+        <img
+          class="wot-01-1-icon4"
+          alt=""
+          src="{{ url_for('static', filename='wot01-1@2x.png') }}"
+          id="wot011Image"
+        />
+        <div class="create-account-as1">Create account (as professional)</div>
+        <div class="frame-wrapper">
+          <div class="name-group">
+            <div class="profession"><div class="form-group">{{ form.name.label(class="form-control-label") }}
+              {% if form.name.errors %}
+                  {{ form.name(class="form-control form-control-lg is-invalid") }}
+                  <div class="invalid-feedback">
+                      {% for error in form.name.errors %}
+                          <span>{{ error }}</span>
+                      {% endfor %}
+                  </div>
+              {% else %}
+                  {{ form.name(class="form-control form-control-lg") }}
+              {% endif %}</div></div>
+        </div>
+        <div class="name-group">
+          <div class="profession"><div class="form-group">{{ form.phone_number.label(class="form-control-label") }}
+            {% if form.phone_number.errors %}
+                {{ form.phone_number(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.phone_number.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.phone_number(class="form-control form-control-lg") }}
+            {% endif %}</div></div>
+        </div>
+        <div class="name-group">
+          <div class="profession"><div class="form-group">{{ form.profession.label(class="form-control-label") }}
+            {% if form.profession.errors %}
+                {{ form.profession(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.profession.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.profession(class="form-control form-control-lg") }}
+            {% endif %}</div></div>
+        </div>
+        <div class="name-group">
+          <div class="profession"><div class="form-group">{{ form.email.label(class="form-control-label") }}
+            {% if form.email.errors %}
+                {{ form.email(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.email.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.email(class="form-control form-control-lg") }}
+            {% endif %}</div></div>
+        </div>
+        <div class="name-group">
+          <div class="profession"><div class="form-group">                   
+            {{ form.password.label(class="form-control-label") }}
+                {% if form.password.errors %}
+                    {{ form.password(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.password.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.password(class="form-control form-control-lg") }}
+                {% endif %}</div></div>
+        </div>
+        <div class="name-group">
+          <div class="profession"><div class="form-group">                  
+            {{ form.confirm_password.label(class="form-control-label") }}
+                {% if form.confirm_password.errors %}
+                    {{ form.confirm_password(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.confirm_password.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.confirm_password(class="form-control form-control-lg") }}
+                {% endif %}</div></div>
+        </div>
+        </div>
+        {{ form.submit(class="sign-up-container") }}
+    </div>
+  </fieldset>
+</form>
+</div>
+</body>
+
+    <script>
+      var wot011Image = document.getElementById("wot011Image");
+      if (wot011Image) {
+        wot011Image.addEventListener("click", function (e) {
+          window.location.href = "{{ url_for('intro') }}";
+        });
+      }
+      </script>
+  </body>
+</html>

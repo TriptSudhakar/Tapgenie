@@ -1,0 +1,82 @@
+.wot-01-1-icon4 {
+  position: relative;
+  width: 345px;
+  height: 196px;
+  flex-shrink: 0;
+  object-fit: cover;
+  cursor: pointer;
+}
+.create-account-as1 {
+  position: relative;
+  font-size: var(--font-size-11xl);
+  text-align: center;
+}
+.name3 {
+  border: 0;
+  background-color: var(--color-gray);
+  position: relative;
+  border-radius: var(--br-8xs);
+  width: 345px;
+  height: 57px;
+  flex-shrink: 0;
+}
+.frame-wrapper,
+.name-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.name-group {
+  gap: var(--gap-5xs);
+}
+.frame-wrapper {
+  padding: var(--padding-3xs);
+}
+.profession,
+.sign-up2 {
+  position: relative;
+}
+.sign-up2 {
+  font-size: var(--font-size-5xl);
+  font-family: var(--font-roboto);
+  color: var(--color-white);
+  text-align: center;
+}
+.sign-up-container,
+.wot-01-1-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sign-up-container {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-lgi) var(--padding-23xl);
+  background-color: var(--color-limegreen);
+  border-radius: var(--br-3xs);
+  flex-direction: row;
+}
+.sign-up-container:hover {
+  background-color: var(--color-forestgreen);
+}
+.wot-01-1-container {
+  position: absolute;
+  top: 46px;
+  left: calc(50% - 218px);
+  flex-direction: column;
+  gap: var(--gap-xs);
+}
+.create-account-as-professional {
+  position: relative;
+  background: radial-gradient(50% 50%at 50% 50%, #efeef2, #8b78b2);
+  border: 1px solid var(--color-black);
+  box-sizing: border-box;
+  width: 100%;
+  height: 1024px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-xl);
+  color: var(--color-black);
+  font-family: var(--font-roboto);
+}

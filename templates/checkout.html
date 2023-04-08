@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='global.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='checkout.css') }}" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap"
+    />
+  </head>
+  <body>
+    <div class="checkout">
+      <nav class="profile-navbar2">
+        <div class="dashboard4" id="dashboardText">Dashboard</div>
+        <img class="wot-01-1-icon9" alt="" src="{{ url_for('static', filename='wot01-12@2x.png') }}" />
+        <div class="bookings-parent1">
+          <div class="bookings3" id="bookingsText">Bookings</div>
+          <img
+            class="group-icon4"
+            alt=""
+            src="{{ url_for('static', filename='group.svg') }}"
+            id="groupIcon"
+          />
+        </div>
+      </nav>
+      <div class="checkout-parent">
+        <div class="checkout1">Checkout</div>
+        <div class="date-15032023-parent">
+          <div class="time-1530-ist-container">
+            <span class="date">Date: </span><span> {{ date }}</span>
+          </div>
+          <div class="time-1530-ist-container">
+            <span class="date">Time Slot: </span><span> {{ slot }}</span>
+          </div>
+        </div>
+        <div class="total-amount-1500-wrapper">
+          <div class="time-1530-ist-container">
+            <span class="date">Amount : </span><span> ₹{{ serve.Price }}</span>
+          </div>
+        </div>
+        <div class="address-abcd-xyz-container">
+          <div class="time-1530-ist-container">
+            <span class="date">Professional :</span><span>{{ prof.name }}</span>
+          </div>
+          
+        </div>
+        <div class="total-amount-1500-wrapper">
+          <div class="select-payment-method">Payment method</div>: Cash on Delivery
+        </div>
+        <!-- <div class="pay-now-wrapper"> -->
+          <form action="{{ url_for('ckc',slot=slot,date=date,sid=serve.Service_ID,pid=prof.professional_ID) }}" method="POST">
+            <input type="submit" class="pay-now-wrapper" value="Book now"></form>
+          <!-- </div> -->
+      </div>
+    </div>
+
+    <script>
+      var dashboardText = document.getElementById("dashboardText");
+      if (dashboardText) {
+        dashboardText.addEventListener("click", function (e) {
+          window.location.href = "{{ url_for('dashboard') }}";
+        });
+      }
+      
+      var bookingsText = document.getElementById("bookingsText");
+      if (bookingsText) {
+        bookingsText.addEventListener("click", function (e) {
+          window.location.href = "{{ url_for('bkc') }}";
+        });
+      }
+      
+      var groupIcon = document.getElementById("groupIcon");
+      if (groupIcon) {
+        groupIcon.addEventListener("click", function (e) {
+          window.location.href = "{{ url_for('mpc') }}";
+        });
+      }
+      </script>
+  </body>
+</html>

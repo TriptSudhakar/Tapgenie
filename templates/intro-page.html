@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='global.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='intro-page.css') }}" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap"
+    />
+  </head>
+  <body>
+    <div class="intro-page">
+      <div class="frame-parent3">
+        <div class="image-parent">
+          <div class="image">
+            <img class="wot-01-1-icon1" alt="" src="{{ url_for('static', filename='wot01-1@2x.png') }}" />
+            <div class="at-you-doorstep">At you doorstep in one tap</div>
+          </div>
+          <div class="clogin-parent">
+            <button class="clogin" id="clogin">
+              <div class="login-as-customer">Login as Customer</div>
+            </button>
+            <div class="or">
+              <div class="or-child"></div>
+              <div class="at-you-doorstep">OR</div>
+              <div class="or-child"></div>
+            </div>
+            <button class="plogin" id="plogin">
+              <div class="login-as-customer"> Login as Professional</div>
+            </button>
+          </div>
+        </div>
+        <img class="cover-1-icon" alt="" src="{{ url_for('static', filename='cover-1@1x.png') }}" />
+      </div>
+    </div>
+
+    <script>
+      var clogin = document.getElementById("clogin");
+      if (clogin) {
+        clogin.addEventListener("click", function (e) {
+          window.location.href = "{{ url_for('login') }}";
+        });
+      }
+      
+      var plogin = document.getElementById("plogin");
+      if (plogin) {
+        plogin.addEventListener("click", function (e) {
+          window.location.href = "{{ url_for('loginP') }}";
+        });
+      }
+      </script>
+  </body>
+</html>

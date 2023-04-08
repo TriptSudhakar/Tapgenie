@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{{ url_for('static', filename='global.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='log-in-as-customer.css') }}" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap"
+    />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    
+  </head>
+  
+  
+  <body>
+    <div class="log-in-as-customer">
+      <form  action="{{ url_for('login') }}" method="POST">
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+      
+      <div class="wot-01-1-group">
+        <img
+          class="wot-01-1-icon3"
+          alt=""
+          src="{{ url_for('static', filename='wot01-11@2x.png') }}"
+          id="wot011Image"
+        /
+        
+        <div class="log-in-as-customer-parent">
+          <div class="log-in-as">Log in as customer</div>
+          <div class="frame-parent4">
+            <div class="mobile-number-parent">
+              <div class="form-group">{{ form.email.label(class="form-control-label") }}
+                {% if form.email.errors %}
+                    {{ form.email(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.email.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.email(class="form-control form-control-lg") }}
+                {% endif %}</div>
+              <!-- <input class="mobile-no" type="email" required autofocus /> -->
+            </div>
+    
+    
+            <div class="mobile-number-parent">
+              <div class="form-group">                   
+                {{ form.password.label(class="form-control-label") }}
+                 {% if form.password.errors %}
+                     {{ form.password(class="form-control form-control-lg is-invalid") }}
+                     <div class="invalid-feedback">
+                         {% for error in form.password.errors %}
+                             <span>{{ error }}</span>
+                         {% endfor %}
+                     </div>
+                 {% else %}
+                     {{ form.password(class="form-control form-control-lg") }}
+                 {% endif %}</div>
+              </div>
+          <!-- </div> -->
+
+            {{ form.submit(class="log-in-wrapper") }}
+
+      
+
+
+          <!-- <button class="log-in-wrapper" id="frameButton">
+            <div class="log-in">Log In </div>
+          </button -->
+          <div class="dont-have-an-account-parent">
+            <div class="dont-have-an-container">
+              <span>Don’t have an account? </span><span class="span"> </span>
+            </div>
+            <div class="sign-up1" id="signUpText">Sign Up</div>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+
+      
+  </form>
+
+    </div>
+
+    <script>
+      var wot011Image = document.getElementById("wot011Image");
+      if (wot011Image) {
+        wot011Image.addEventListener("click", function (e) {
+          window.location.href = "{{ url_for('intro') }}";
+        });
+      }
+      
+      var frameButton = document.getElementById("frameButton");
+      if (frameButton) {
+        frameButton.addEventListener("click", function (e) {
+          window.location.href = "{{ url_for('dashboard') }}";
+        });
+      }
+      
+      var signUpText = document.getElementById("signUpText");
+      if (signUpText) {
+        signUpText.addEventListener("click", function (e) {
+          window.location.href = "{{ url_for('signup') }}";
+        });
+      }
+      </script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+{% extends "appointments-of-professional.html" %}
+{% block active %}
+    {% for e in active_bookings %}
+    <div class="frame-parent15">
+      <div class="haircut-container">
+        <div class="haircut2">{{ e.Service_ID | service_name }}</div>
+        <div class="date-3323-container">
+          <div class="haircut2">Date - {{ e.appointment_date }}</div>
+          <div class="haircut2">Time - {{ e.appointment_time }}</div>
+        </div>
+      </div>
+      <button class="details-wrapper2">
+        <div class="details4"><a href="{{ url_for('bkpd', id = e.appointment_ID ) }}">Details</a></div>
+      </button>
+    </div>
+    {% endfor %}
+{% endblock active %}
+{% block past %}
+    {% for e in past_bookings %}
+    <div class="frame-parent17">
+      <div class="haircut-container">
+        <div class="haircut2">{{ e.Service_ID | service_name }}</div>
+        <div class="date-4323-container">
+          <div class="haircut2">Date - {{ e.appointment_date }}</div>
+          <div class="haircut2">Time - {{ e.appointment_time }}</div>
+        </div>
+      </div>
+      <button class="details-wrapper4">
+        <div class="details4"><a href="{{ url_for('bkpd', id = e.appointment_ID ) }}">Details</a></div>
+      </button>
+    </div>
+    {% endfor %}
+{% endblock past %}

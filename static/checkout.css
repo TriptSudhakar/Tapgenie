@@ -1,0 +1,167 @@
+.dashboard4,
+.wot-01-1-icon9 {
+  position: relative;
+  flex-shrink: 0;
+}
+.dashboard4 {
+  font-size: var(--font-size-7xl);
+  font-family: var(--font-roboto);
+  color: var(--color-white);
+  text-align: left;
+  display: inline-block;
+  width: 192px;
+  height: 30px;
+  cursor: pointer;
+}
+.wot-01-1-icon9 {
+  width: 118px;
+  height: 61px;
+  object-fit: cover;
+}
+.bookings3,
+.group-icon4 {
+  position: relative;
+  cursor: pointer;
+}
+.bookings3 {
+  font-size: var(--font-size-7xl);
+  font-family: var(--font-roboto);
+  color: var(--color-white);
+  text-align: center;
+}
+.group-icon4 {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+}
+.bookings-parent1,
+.profile-navbar2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.bookings-parent1 {
+  width: 184px;
+  flex-shrink: 0;
+}
+.profile-navbar2 {
+  align-self: stretch;
+  background-color: var(--color-black);
+  overflow: hidden;
+  padding: var(--padding-6xs) var(--padding-9xl);
+}
+.checkout1 {
+  position: relative;
+  font-size: var(--font-size-11xl);
+  font-weight: 500;
+  text-align: center;
+}
+.date {
+  font-weight: 600;
+}
+.time-1530-ist-container {
+  position: relative;
+}
+.date-15032023-parent,
+.total-amount-1500-wrapper {
+  align-self: stretch;
+  border-radius: var(--br-8xs);
+  background-color: var(--color-lavender);
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding-5xl) var(--padding-6xl);
+  align-items: center;
+  justify-content: space-between;
+}
+.total-amount-1500-wrapper {
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.edit11 {
+  position: relative;
+  font-size: var(--font-size-3xl);
+  font-family: var(--font-roboto);
+  color: var(--color-black);
+  text-align: left;
+}
+.address-abcd-xyz-container,
+.edit-wrapper8 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.edit-wrapper8 {
+  cursor: pointer;
+  border: 3px solid var(--color-black);
+  padding: var(--padding-6xs) var(--padding-16xl);
+  background-color: var(--color-thistle-200);
+  border-radius: var(--br-22xl);
+  justify-content: center;
+}
+.edit-wrapper8:hover {
+  background-color: var(--color-thistle-100);
+}
+.address-abcd-xyz-container {
+  align-self: stretch;
+  border-radius: var(--br-8xs);
+  background-color: var(--color-lavender);
+  padding: var(--padding-lgi) var(--padding-6xl);
+  justify-content: space-between;
+}
+.select-payment-method {
+  position: relative;
+  font-weight: 600;
+}
+.pay-now {
+  position: relative;
+  font-size: var(--font-size-5xl);
+  font-family: var(--font-roboto);
+  color: var(--color-white);
+  text-align: center;
+}
+.pay-now-wrapper {
+  cursor: pointer;
+  border: 0;
+  padding: 18px 37px;
+  background-color: var(--color-limegreen);
+  border-radius: var(--br-3xs);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.pay-now-wrapper:hover {
+  background-color: var(--color-forestgreen);
+}
+.checkout,
+.checkout-parent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.checkout-parent {
+  align-self: stretch;
+  padding: 0 var(--padding-141xl);
+  justify-content: center;
+  gap: 43px;
+}
+.checkout {
+  position: relative;
+  background-color: var(--color-thistle-200);
+  border: 1px solid var(--color-black);
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
+  padding: 0 0 var(--padding-81xl);
+  justify-content: flex-start;
+  gap: 54px;
+  text-align: left;
+  font-size: var(--font-size-7xl);
+  color: var(--color-black);
+  font-family: var(--font-roboto);
+}
+a{
+  text-decoration: none;
+  }
+  a:visited{ color: black;}

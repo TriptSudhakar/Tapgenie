@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='global.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='bookings.css') }}" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap"
+    />
+  </head>
+  <body>
+    <div class="bookings4">
+      <nav class="bookings-navbar">
+        <div class="dashboard5" id="dashboardText">Dashboard</div>
+        <img class="wot-01-1-icon10" alt="" src="{{ url_for('static', filename='wot01-12@2x.png') }}" />
+        <div class="frame-parent10">
+          <div class="bookings-parent2">
+            <b class="bookings5">Bookings</b>
+            <div class="frame-inner"></div>
+          </div>
+          <img
+            class="group-icon5"
+            alt=""
+            src="{{ url_for('static', filename='group.svg') }}"
+            id="groupIcon"
+          />
+        </div>
+      </nav>
+      <div class="active-bookings-parent">
+        <div class="active-bookings">Active Bookings</div>
+        {% block active%}{% endblock %}
+        <div class="active-bookings">Past Bookings</div>
+        {% block past%}{% endblock %}
+      </div>
+    </div>
+
+    <script>
+      var dashboardText = document.getElementById("dashboardText");
+      if (dashboardText) {
+        dashboardText.addEventListener("click", function (e) {
+          window.location.href = "{{ url_for('dashboard') }}";
+        });
+      }
+      
+      var groupIcon = document.getElementById("groupIcon");
+      if (groupIcon) {
+        groupIcon.addEventListener("click", function (e) {
+          window.location.href = "{{ url_for('mpc') }}";
+        });
+      }
+      </script>
+  </body>
+</html>

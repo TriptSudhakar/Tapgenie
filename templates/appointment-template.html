@@ -1,0 +1,31 @@
+{% extends "beauty-and-wellness.html" %}
+{% block title %}
+<div class="beauty-and-wellness2">{{ title }}</div>
+{% endblock title%}
+{% block content %}
+    {% for service in services %}
+        <div class="haircut-parent4">
+          <div class="massage">{{ service.Service_name }}</div>
+          <div class="parent3">
+            <div class="massage">₹{{ service.Price }}</div>
+            <div class="parent4">
+              <div class="massage">{{ service.Rating }}</div>
+              <div class="vector-parent">
+                {% set val = service.Rating%}
+                {% set n = val | greatest_integer %}
+                {% for i in range(0,n) %}
+                <img
+                  class="vector-icon8"
+                  alt=""
+                  src="{{ url_for('static', filename='vector1.svg') }}"
+                />
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+          <button class="book-appointment-wrapper">
+            <div class="book-appointment"><a href="{{ url_for('index2', id = service.Service_ID ) }}">Book Appointment</a></div>
+          </button>
+        </div>
+    {% endfor %}
+{% endblock content %}

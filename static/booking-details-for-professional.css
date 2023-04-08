@@ -1,0 +1,120 @@
+.appointments2,
+.frame-child2 {
+  position: relative;
+  cursor: pointer;
+}
+.frame-child2 {
+  width: 45px;
+  height: 40px;
+  flex-shrink: 0;
+}
+.appointments2 {
+  font-size: var(--font-size-7xl);
+  font-family: var(--font-roboto);
+  color: var(--color-white);
+  text-align: left;
+}
+.group-parent1 {
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding-3xs) 0;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-3xs);
+}
+.wot-01-1-icon13 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 118px;
+  height: 61px;
+  object-fit: cover;
+}
+.group-icon8,
+.wot-01-1-wrapper1 {
+  position: relative;
+  width: 260px;
+  height: 61px;
+  flex-shrink: 0;
+}
+.group-icon8 {
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+}
+.profile-navbar4 {
+  align-self: stretch;
+  background-color: var(--color-black);
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding-10xs) var(--padding-9xl);
+  align-items: center;
+  justify-content: space-between;
+}
+.booking-details1 {
+  position: relative;
+  font-weight: 500;
+}
+.date2 {
+  font-weight: 600;
+  font-family: var(--font-roboto);
+}
+.blank-line14 {
+  margin: 0;
+  font-weight: 600;
+}
+.olly-warner {
+  font-family: var(--font-roboto);
+}
+.name-of-customer-olly-warner {
+  margin: 0;
+}
+.category-beauty-and-container1 {
+  align-self: stretch;
+  position: relative;
+  display: inline-block;
+  height: 402px;
+  flex-shrink: 0;
+}
+.booking-details-group,
+.category-beauty-and-wellness-container {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.category-beauty-and-wellness-container {
+  background-color: var(--color-lavender);
+  padding: var(--padding-11xl);
+  justify-content: flex-start;
+  text-align: left;
+  font-size: var(--font-size-xl);
+}
+.booking-details-group {
+  padding: 0 var(--padding-281xl);
+  justify-content: center;
+  gap: var(--gap-42xl);
+}
+.booking-details-for-profession {
+  position: relative;
+  background-color: var(--color-thistle-200);
+  border: 1px solid var(--color-black);
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 var(--padding-131xl);
+  align-items: center;
+  justify-content: flex-start;
+  gap: 66px;
+  text-align: center;
+  font-size: var(--font-size-11xl);
+  color: var(--color-black);
+  font-family: var(--font-roboto);
+}
+a{
+  text-decoration: none;
+  }
+  a:visited{ color: black;}

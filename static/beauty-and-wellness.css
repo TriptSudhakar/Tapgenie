@@ -1,0 +1,212 @@
+.dashboard7,
+.frame-child3 {
+  position: relative;
+  cursor: pointer;
+}
+.frame-child3 {
+  width: 45px;
+  height: 40px;
+  flex-shrink: 0;
+}
+.dashboard7 {
+  font-size: var(--font-size-7xl);
+  font-family: var(--font-roboto);
+  color: var(--color-white);
+  text-align: left;
+}
+.frame-child4 {
+  position: relative;
+  border-radius: var(--br-11xs-5);
+  background-color: var(--color-white);
+  width: 126px;
+  height: 3px;
+  flex-shrink: 0;
+}
+.dashboard-group,
+.group-parent2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-12xs);
+}
+.group-parent2 {
+  flex-direction: row;
+  gap: var(--gap-3xs);
+}
+.wot-01-1-icon14 {
+  position: relative;
+  width: 118px;
+  height: 61px;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.bookings7,
+.group-icon9 {
+  position: relative;
+  cursor: pointer;
+}
+.bookings7 {
+  font-size: var(--font-size-7xl);
+  font-family: var(--font-roboto);
+  color: var(--color-white);
+  text-align: center;
+}
+.group-icon9 {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+}
+.bookings-parent4,
+.dashboard-navbar1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.bookings-parent4 {
+  width: 184px;
+  flex-shrink: 0;
+}
+.dashboard-navbar1 {
+  align-self: stretch;
+  background-color: var(--color-black);
+  overflow: hidden;
+  padding: var(--padding-6xs) var(--padding-9xl);
+}
+.beauty-and-wellness2 {
+  position: relative;
+  font-weight: 500;
+}
+.vector-icon8 {
+  position: relative;
+  width: 19px;
+  height: 19px;
+  flex-shrink: 0;
+}
+.parent3,
+.parent4,
+.vector-parent {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-6xs);
+}
+.parent3,
+.parent4 {
+  align-items: center;
+  gap: var(--gap-xs);
+  font-size: var(--font-size-xs);
+}
+.parent3 {
+  justify-content: center;
+  gap: var(--gap-11xl);
+  font-size: var(--font-size-base);
+}
+.book-appointment {
+  position: relative;
+  font-size: var(--font-size-3xl);
+  font-family: var(--font-roboto);
+  color: var(--color-black);
+  text-align: left;
+}
+.book-appointment-wrapper {
+  cursor: pointer;
+  border: 3px solid var(--color-black);
+  padding: var(--padding-xs) var(--padding-smi);
+  background-color: var(--color-thistle-200);
+  border-radius: var(--br-22xl);
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.book-appointment-wrapper:hover {
+  background-color: var(--color-thistle-100);
+}
+.haircut-parent4 {
+  align-self: stretch;
+  border-radius: var(--br-8xs);
+  background-color: var(--color-lavender);
+  display: flex;
+  flex-direction: column;
+  padding: var(--padding-4xl) var(--padding-12xl);
+  align-items: flex-start;
+  justify-content: center;
+  gap: var(--gap-3xs);
+}
+.massage {
+  position: relative;
+}
+.parent5,
+.vector-group {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-7xs);
+}
+.parent5 {
+  gap: var(--gap-11xl);
+  font-size: var(--font-size-base);
+}
+.massage-parent {
+  border-radius: var(--br-8xs);
+}
+.facials-parent,
+.massage-parent {
+  align-self: stretch;
+  background-color: var(--color-lavender);
+  display: flex;
+  flex-direction: column;
+  padding: var(--padding-4xl) var(--padding-12xl);
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-3xs);
+}
+.book-appointment8,
+.frame-parent19 {
+  text-align: left;
+  font-size: var(--font-size-3xl);
+}
+.book-appointment8 {
+  position: relative;
+  font-family: var(--font-roboto);
+  color: var(--color-black);
+  cursor: pointer;
+}
+.frame-parent19 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+.beauty-and-wellness-parent,
+.beauty-and-wellness1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap-52xl);
+}
+.beauty-and-wellness-parent {
+  align-self: stretch;
+  padding: 0 var(--padding-141xl);
+  justify-content: center;
+}
+.beauty-and-wellness1 {
+  position: relative;
+  background-color: var(--color-thistle-200);
+  border: 1px solid var(--color-black);
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 0 var(--padding-41xl);
+  justify-content: flex-start;
+  text-align: center;
+  font-size: var(--font-size-11xl);
+  color: var(--color-black);
+  font-family: var(--font-roboto);
+}

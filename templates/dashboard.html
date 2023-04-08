@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='global.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap"
+    />
+  </head>
+  <body>
+    <div class="dashboard2">
+      <nav class="dashboard-navbar">
+        <div class="dashboard-parent">
+          <b class="dashboard3">Dashboard</b>
+          <div class="frame-item"></div>
+        </div>
+        <img class="wot-01-1-icon8" alt="" src="{{ url_for('static', filename='wot01-12@2x.png') }}" />
+        <div class="bookings-container">
+          <div class="bookings2" id="bookingsText">Bookings
+          </div>
+          <img
+            class="group-icon3"
+            alt=""
+            src="{{ url_for('static', filename='group.svg') }}"
+            id="groupIcon"
+          />
+        </div>
+      </nav>
+      <div class="frame-parent6">
+        <div class="frame-parent7">
+          <button class="beauty-and-wellness-wrapper" id="frameButton1">
+            <div class="beauty-and-wellness">BEAUTY AND WELLNESS</div></button
+          ><button class="beauty-and-wellness-wrapper" id="frameButton2">
+            <div class="beauty-and-wellness">HOME CLEANING</div>
+          </button>
+        </div>
+        <div class="frame-parent8">
+          <button class="beauty-and-wellness-wrapper" id="frameButton3">
+            <div class="beauty-and-wellness">APPLIANCE REPAIR</div></button
+          ><button class="beauty-and-wellness-wrapper" id="frameButton4">
+            <div class="beauty-and-wellness">HOME REPAIR</div>
+          </button>
+        </div>
+        <div class="frame-parent8">
+          <button class="beauty-and-wellness-wrapper" id="frameButton5">
+            <div class="beauty-and-wellness">HOME PAINTING</div></button
+          ><button class="beauty-and-wellness-wrapper" id="frameButton6">
+            <div class="beauty-and-wellness">DISINFECTION AND PEST</div>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var bookingsText = document.getElementById("bookingsText");
+      if (bookingsText) {
+        bookingsText.addEventListener("click", function (e) {
+          window.location.href = "{{ url_for('bkc') }}";
+        });
+      }
+      
+      var groupIcon = document.getElementById("groupIcon");
+      if (groupIcon) {
+        groupIcon.addEventListener("click", function (e) {
+          window.location.href = "{{ url_for('mpc') }}";
+        });
+      }
+      
+      var frameButton1 = document.getElementById("frameButton1");
+      if (frameButton1) {
+        frameButton1.addEventListener("click", function (e) {
+          window.location.href = "{{ url_for('bandw') }}";
+        });
+      }
+      
+      var frameButton2 = document.getElementById("frameButton2");
+      if (frameButton2) {
+        frameButton2.addEventListener("click", function (e) {
+          window.location.href = "{{ url_for('homec') }}";
+        });
+      }
+      
+      var frameButton3 = document.getElementById("frameButton3");
+      if (frameButton3) {
+        frameButton3.addEventListener("click", function (e) {
+          window.location.href = "{{ url_for('apprep') }}";
+        });
+      }
+
+      var frameButton4 = document.getElementById("frameButton4");
+      if (frameButton4) {
+        frameButton4.addEventListener("click", function (e) {
+          window.location.href = "{{ url_for('homerep') }}";
+        });
+      }
+
+      var frameButton5 = document.getElementById("frameButton5");
+      if (frameButton5) {
+        frameButton5.addEventListener("click", function (e) {
+          window.location.href = "{{ url_for('paint') }}";
+        });
+      }
+
+      var frameButton6 = document.getElementById("frameButton6");
+      if (frameButton6) {
+        frameButton6.addEventListener("click", function (e) {
+          window.location.href = "{{ url_for('pest') }}";
+        });
+      }
+      </script>
+  </body>
+</html>

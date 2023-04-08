@@ -1,0 +1,33 @@
+{% extends "index.html" %}
+{% block prof %}
+{% for p in professionals %}
+{% set r = p.rating | float %}
+{% set s = service.Price | float %}
+<div class="frame-group">
+  <div class="frame-container">
+    <div class="john-smith-parent">
+      <div class="service-haircut">{{ p.name }}</div>
+      <div class="container">
+        <div class="service-haircut">₹{{ s }}</div>
+        <div class="frame-div">
+          <div class="service-haircut">{{ p.rating }}</div>
+          {% set val = p.rating %}
+          {% set n = val | greatest_integer %}
+          {% for i in range(0,n) %}
+          <img
+            class="vector-icon8"
+            alt=""
+            src="{{ url_for('static', filename='vector1.svg') }}"
+          />
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <div class="reviews">Reviews</div>
+  </div>
+  <button class="book-now-wrapper">
+    <div class="book-now"><a href="{{ url_for('ckc',sid = service.Service_ID, pid = p.Professional_ID,  date = date, slot = slot)}}">Book Now</a></div>
+  </button>
+</div>
+{% endfor %}
+{% endblock prof %}

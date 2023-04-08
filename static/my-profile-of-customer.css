@@ -1,0 +1,177 @@
+.dashboard1,
+.wot-01-1-icon6 {
+  position: relative;
+  flex-shrink: 0;
+}
+.dashboard1 {
+  font-size: var(--font-size-7xl);
+  font-family: var(--font-roboto);
+  color: var(--color-white);
+  text-align: left;
+  display: inline-block;
+  width: 184px;
+  height: 30px;
+  cursor: pointer;
+}
+.wot-01-1-icon6 {
+  width: 118px;
+  height: 61px;
+  object-fit: cover;
+}
+.bookings1 {
+  position: relative;
+  font-size: var(--font-size-7xl);
+  font-family: var(--font-roboto);
+  color: var(--color-white);
+  text-align: center;
+  cursor: pointer;
+}
+.group-icon1 {
+  position: relative;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+}
+.bookings-group,
+.profile-navbar1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.bookings-group {
+  width: 184px;
+  flex-shrink: 0;
+}
+.profile-navbar1 {
+  align-self: stretch;
+  background-color: var(--color-black);
+  overflow: hidden;
+  padding: var(--padding-6xs) var(--padding-9xl);
+}
+.my-profile,
+.sign-out {
+  display: inline-block;
+  flex-shrink: 0;
+}
+.my-profile {
+  position: relative;
+  font-size: var(--font-size-11xl);
+  font-weight: 500;
+  text-align: center;
+  width: 137px;
+  height: 35px;
+}
+.sign-out {
+  color: var(--color-slateblue);
+  width: 95px;
+  height: 30px;
+  cursor: pointer;
+}
+.sign-out,
+.username-whojohnjohn-container {
+  position: relative;
+}
+.username8 {
+  align-self: stretch;
+  border-radius: var(--br-8xs);
+  background-color: var(--color-lavender);
+  display: flex;
+  flex-direction: column;
+  padding: var(--padding-5xl) var(--padding-6xl);
+  align-items: flex-start;
+  justify-content: center;
+}
+.edit {
+  position: relative;
+  font-size: var(--font-size-3xl);
+  font-family: var(--font-roboto);
+  color: var(--color-black);
+  text-align: left;
+}
+.edit-wrapper,
+.name-john-smith-parent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.edit-wrapper {
+  cursor: pointer;
+  border: 3px solid var(--color-black);
+  padding: var(--padding-6xs) var(--padding-16xl);
+  background-color: var(--color-thistle-200);
+  border-radius: var(--br-22xl);
+  justify-content: center;
+}
+.edit-wrapper1:hover,
+.edit-wrapper:hover {
+  background-color: var(--color-thistle-100);
+}
+.name-john-smith-parent {
+  align-self: stretch;
+  /* border-radius: var(--br-8xs); */
+  background-color: var(--color-lavender);
+  padding: var(--padding-lgi) var(--padding-6xl);
+  justify-content: space-between;
+}
+.phone-number {
+  font-weight: 600;
+}
+.edit-wrapper1 {
+  border-radius: var(--br-22xl);
+  background-color: var(--color-thistle-200);
+  border: 3px solid var(--color-black);
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding-6xs) var(--padding-16xl);
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-3xl);
+}
+.my-profile-of-customer,
+.my-profile-parent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.my-profile-parent {
+  align-self: stretch;
+  padding: 0 var(--padding-141xl);
+  justify-content: center;
+  gap: 31px;
+}
+.my-profile-of-customer {
+  position: relative;
+  background-color: var(--color-thistle-200);
+  border: 1px solid var(--color-black);
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
+  padding: 0 0 var(--padding-81xl);
+  justify-content: flex-start;
+  gap: var(--gap-21xl);
+  text-align: left;
+  font-size: var(--font-size-7xl);
+  color: var(--color-black);
+  font-family: var(--font-roboto);
+}
+@media screen and (max-width: 960px) {
+  .my-profile-parent {
+    width: auto;
+    padding-left: var(--padding-41xl);
+    padding-right: var(--padding-41xl);
+    box-sizing: border-box;
+  }
+}
+.edit-wrapper-returns {
+  cursor: pointer;
+  border: 3px solid var(--color-black);
+  padding: var(--padding-6xs) var(--padding-16xl);
+  background-color: var(--color-thistle-200);
+  border-radius: var(--br-22xl);
+  justify-content: center;
+  float: right;
+}
+a{
+  text-decoration-color: black;
+}

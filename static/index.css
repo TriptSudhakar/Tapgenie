@@ -13,6 +13,7 @@
   font-family: var(--font-roboto);
   color: var(--color-white);
   text-align: left;
+  
 }
 .group-parent {
   display: flex;
@@ -60,6 +61,7 @@
   background-color: var(--color-black);
   overflow: hidden;
   padding: var(--padding-6xs) var(--padding-9xl);
+  background-color: #212A3E;
 }
 .service-haircut,
 .vector-icon {
@@ -91,11 +93,13 @@
 }
 .service-haircut-parent {
   align-self: stretch;
-  border-radius: var(--br-8xs);
+  border-radius: 20px;
   background-color: var(--color-lavender);
   flex-direction: column;
   padding: var(--padding-5xl) var(--padding-12xl);
   gap: var(--gap-5xs);
+  background: radial-gradient(#d0d6e0,#9BA4B5);
+
 }
 .choose-date {
   margin: 0;
@@ -141,11 +145,17 @@
   align-items: flex-start;
   justify-content: flex-start;
   gap: var(--gap-5xs);
+  
 }
 .reviews {
   position: relative;
-  text-decoration: underline;
   color: var(--color-slateblue);
+  transition: all 0.3s ease-in-out;
+}
+
+.reviews:hover {
+  transform: scale(1.05);
+  text-shadow: 1px 1px 2px #212A3E;
 }
 .frame-container {
   display: flex;
@@ -169,15 +179,26 @@
 }
 .book-now-wrapper {
   cursor: pointer;
-  border: 3px solid var(--color-black);
   padding: var(--padding-xs) var(--padding-xl);
-  background-color: transparent;
   border-radius: 50px;
   justify-content: center;
+
+  padding: var(--padding-xs) var(--padding-smi);
+  background-color: var(--color-thistle-200);
+  border-radius: var(--br-22xl);
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition: all 0.1s ease-in-out;
+  box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.5);
+  background-color: #212A3E;
 }
 .book-now-container:hover,
 .book-now-wrapper:hover {
-  background-color: var(--color-silver);
+  transform: scale(1.01);
+  box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.8);
+
 }
 .frame-group {
   align-self: stretch;
@@ -185,6 +206,17 @@
   background-color: var(--color-gainsboro-200);
   padding: var(--padding-5xl) var(--padding-12xl);
   justify-content: space-between;
+
+  align-self: stretch;
+  background-color: var(--color-lavender);
+  align-items: flex-start;
+  gap: var(--gap-3xs);
+  border-radius: 20px;
+  transition: transform 0.3s ease-in-out;
+  background: radial-gradient(#d0d6e0,#9BA4B5);
+}
+.frame-group:hover {
+  transform: scale(1.05);
 }
 .frame-parent2 {
   display: flex;
@@ -215,6 +247,8 @@
   align-self: stretch;
   padding: 0 var(--padding-141xl) var(--padding-41xl);
   justify-content: center;
+  
+  
 }
 .schedule-appointments {
   position: relative;

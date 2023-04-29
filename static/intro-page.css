@@ -34,7 +34,9 @@
 }
 .clogin:hover,
 .plogin:hover {
-  background-color: var(--color-darkgray);
+  /* background-color: var(--color-darkgray); */
+  box-shadow: 0px 0px 10px 10px rgba(0,0,0,0.5);
+
 }
 .or-child {
   position: relative;
@@ -103,9 +105,9 @@
   position: relative;
   background: radial-gradient(
     50% 50%at 50% 50%,
-    #7a65a8,
-    rgba(122, 101, 168, 0.5) 72.61%,
-    rgba(122, 101, 168, 0)
+    #d0d6e0,
+    #9BA4B5 85%,
+    #8495b3
   );
   border: 1px solid var(--color-black);
   box-sizing: border-box;

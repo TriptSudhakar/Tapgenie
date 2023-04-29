@@ -18,8 +18,8 @@ body {
   --font-size-lg: 18px;
 
   /* Colors */
-  --color-thistle-100: #c5b4e9;
-  --color-thistle-200: #a597c3;
+  --color-thistle-100: #F1F6F9;
+  --color-thistle-200: #b7cfdc;
   --color-black: #000;
   --color-gainsboro-100: #e8e6ed;
   --color-gainsboro-200: #d9d9d9;
@@ -31,7 +31,7 @@ body {
   --color-limegreen: #3fc334;
   --color-forestgreen: #2e9026;
   --color-gray: #fffdfd;
-  --color-lightsteelblue: #c1c1d4;
+  --color-lightsteelblue: #F1F6F9;
 
   /* Gaps */
   --gap-27xl: 46px;

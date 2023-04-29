@@ -2,6 +2,19 @@
 <html>
   <head>
     <meta charset="utf-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews</title>
+
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+    />
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" >
+
+
     <meta name="viewport" content="initial-scale=1, width=device-width" />
     <link rel="stylesheet" href="{{ url_for('static', filename='global.css') }}" />
     <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}" />
@@ -72,63 +85,87 @@
         </div>
       </nav>
       
+      
+
       <div class="frame-parent">
         
+
+        
         <div class="service-haircut-parent">
-          <div class="service-haircut">Service : {{ service.Service_name }}</div>
+          <div class="service-haircut">Name of Professional : {{pname}} </div>
           <div class="parent">
-            <div class="service-haircut">₹{{ service.Price }}</div>
+            <div class="service-haircut"></div>
             <div class="group">
-              <div class="service-haircut">{{ service.Rating }}</div>
-              <img class="vector-icon" alt="" src="{{ url_for('static', filename='vector1.svg') }}" />
+              <div class="service-haircut"></div>
+              
             </div>
           </div>
       </div>
 
 
-          <div class="username8">
-            <div class="name-john-smith-parent">
-               <!-- <form action="{{ url_for('index2') }}" method="POST">
-                <div class="username-whojohnjohn-container">
+    <div class="container">
+        <div class="board">
+            <h2 class="text-light">Word from our customers</h2>
 
-                  <label for="datepicker">Date:</label>
-                  <input type="date" id="datepicker" name="datepicker" required>
-    
-    
-                  <label for="dropdown">Select time:</label>
-                  <select name="dropdown" id="dropdown" required>
-                    <option value="option1"> 9:00am to 11:00am</option>
-                    <option value="option2">12:00pm to 2:00pm</option>
-                    <option value="option3">3:00pm to 5:00pm</option>
-                    <option value="option3">6:00pm to 8:00pm</option>
-                  </select>
-    
-                </form> -->
-                <form action= "{{url_for('index2',id = service.Service_ID)}}" method="post">
-                  <label for="datepicker">Select a date and time:</label>
-                  <input type="date" id="datepicker" name="datepicker" required>
-                  <label for="color">Choose a slot:</label>
-                <select id="color" name="color">
-                  <option value=1>9:00 am to 11:00 am</option>
-                  <option value=2>12:00 pm to 2:00 pm</option>
-                  <option value=3>3:00 pm to 5:00 pm</option>
-                  <option value=4>6:00 pm to 8:00 pm</option>
-                </select>
-                  <input type="submit" class="edit-wrapper" value="Submit">
-              </form>
+            <!-- Slider main container -->
+            <div class="swiper">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                {% for r in revs %}
+                <div class="swiper-slide">
+                    <div class="flex">
+                       
+                          {% if lang == '0' %}
+                          <div class="comments"> {{r.review_words}} </div>
+                            {% else %}
+                            <div class="comments">
+                              
+                              {{r.review_hindi}}</div>
+                            {% endif %}
+                        
 
-              
-              
+                        <div class="profile">
+                            <a href="#">
+                                
+                        <div class="frame-div">
+
+                        {% set val = r.rating %}
+                        {% set n = val | greatest_integer %}
+                        {% for i in range(0,n) %}
+                        <img
+                          class="vector-icon8"
+                          alt=""
+                          src="{{ url_for('static', filename='vector1.svg') }}"
+                        />
+                        {% endfor %}
+                        </div>
+                            
+                            </a>
+                            <a href="#">{{r.name}}</a>
+
+                        </div>
+                        {% if lang == '0' %}
+                        <div class="reviews"><a href ="{{url_for('review',sid = sid, pid = pid, date = date, slot = slot, pname= pname,lang=1)}}">translate in hindi</a></div>
+                        {% else %}
+                        <div class="reviews"><a href ="{{url_for('review',sid = sid, pid = pid, date = date, slot = slot, pname= pname,lang=0)}}">translate in english</a></div>
+                        {% endif %}
+                    </div>
                 </div>
-    
-                <!-- <a href="{{ url_for('update') }}"><button class="edit-wrapper"><div class="edit">EDIT</div></button></a> -->
-                <!-- <input type="submit" class="edit-wrapper" value="Find available professionals"> -->
-              <!-- </div> -->
+                {% endfor %}
+
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
             
-          <!-- </div> -->
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+        
+            </div>
+
         </div>
-        <div class="available-professionals">Available Professionals</div>
-        {% block prof %}{% endblock %}
+    </div>
+
       </div>
     </div>
 
@@ -176,5 +213,9 @@
       }
       flatpickr("input[type=datetime-local]",config);
       </script>
+
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+<script src="../static/main.js"></script>
+
   </body>
 </html>

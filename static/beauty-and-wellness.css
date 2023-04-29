@@ -70,9 +70,9 @@
 }
 .dashboard-navbar1 {
   align-self: stretch;
-  background-color: var(--color-black);
   overflow: hidden;
   padding: var(--padding-6xs) var(--padding-9xl);
+  background-color: #212A3E;
 }
 .beauty-and-wellness2 {
   position: relative;
@@ -109,11 +109,13 @@
   font-size: var(--font-size-3xl);
   font-family: var(--font-roboto);
   color: var(--color-black);
+  text-decoration: none;
   text-align: left;
+  align-content: flex-end;
+
 }
 .book-appointment-wrapper {
   cursor: pointer;
-  border: 3px solid var(--color-black);
   padding: var(--padding-xs) var(--padding-smi);
   background-color: var(--color-thistle-200);
   border-radius: var(--br-22xl);
@@ -122,13 +124,20 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  transition: all 0.1s ease-in-out;
+  box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.5);
+  background-color: #212A3E;
+
 }
+
 .book-appointment-wrapper:hover {
-  background-color: var(--color-thistle-100);
+  transform: scale(1.01);
+  box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.8);
+  /* background-color: var(--color-thistle-100); */
 }
+
 .haircut-parent4 {
   align-self: stretch;
-  border-radius: var(--br-8xs);
   background-color: var(--color-lavender);
   display: flex;
   flex-direction: column;
@@ -136,7 +145,16 @@
   align-items: flex-start;
   justify-content: center;
   gap: var(--gap-3xs);
+  border-radius: 20px;
+  transition: transform 0.3s ease-in-out;
+  background: radial-gradient(#d0d6e0,#9BA4B5);
+
 }
+
+.haircut-parent4:hover {
+  transform: scale(1.05);
+}
+
 .massage {
   position: relative;
 }
@@ -199,7 +217,7 @@
 }
 .beauty-and-wellness1 {
   position: relative;
-  background-color: var(--color-thistle-200);
+  background-color: #b7cfdc;
   border: 1px solid var(--color-black);
   box-sizing: border-box;
   width: 100%;

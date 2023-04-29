@@ -45,9 +45,9 @@
 }
 .profile-navbar1 {
   align-self: stretch;
-  background-color: var(--color-black);
   overflow: hidden;
   padding: var(--padding-6xs) var(--padding-9xl);
+  background-color: #212A3E;
 }
 .my-profile,
 .sign-out {
@@ -71,22 +71,25 @@
 .sign-out,
 .username-whojohnjohn-container {
   position: relative;
+  
 }
 .username8 {
   align-self: stretch;
-  border-radius: var(--br-8xs);
-  background-color: var(--color-lavender);
+  border-radius: 20px;
+  background: radial-gradient(#d0d6e0,#9BA4B5);
   display: flex;
   flex-direction: column;
   padding: var(--padding-5xl) var(--padding-6xl);
   align-items: flex-start;
   justify-content: center;
+
+  
 }
 .edit {
   position: relative;
   font-size: var(--font-size-3xl);
   font-family: var(--font-roboto);
-  color: var(--color-black);
+  color: white;
   text-align: left;
 }
 .edit-wrapper,
@@ -94,25 +97,30 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  /* background-color: transparent; */
+  
 }
 .edit-wrapper {
   cursor: pointer;
-  border: 3px solid var(--color-black);
   padding: var(--padding-6xs) var(--padding-16xl);
-  background-color: var(--color-thistle-200);
-  border-radius: var(--br-22xl);
+  background-color: #212A3E;
+  border-radius: 20px;
   justify-content: center;
+  color: white;
 }
 .edit-wrapper1:hover,
 .edit-wrapper:hover {
-  background-color: var(--color-thistle-100);
+  box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.8);
 }
 .name-john-smith-parent {
   align-self: stretch;
   /* border-radius: var(--br-8xs); */
-  background-color: var(--color-lavender);
   padding: var(--padding-lgi) var(--padding-6xl);
   justify-content: space-between;
+  background: radial-gradient(#d0d6e0,#9BA4B5);
+  border-radius: 20px
+  
+  
 }
 .phone-number {
   font-weight: 600;
@@ -127,6 +135,7 @@
   align-items: center;
   justify-content: center;
   font-size: var(--font-size-3xl);
+  color: white;
 }
 .my-profile-of-customer,
 .my-profile-parent {

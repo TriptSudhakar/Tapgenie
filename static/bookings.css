@@ -63,7 +63,7 @@
   background-color: var(--color-black);
   overflow: hidden;
   padding: var(--padding-6xs) var(--padding-9xl);
-}
+  background-color: #212A3E;}
 .active-bookings {
   font-size: var(--font-size-11xl);
   font-weight: 500;
@@ -94,45 +94,76 @@
   font-family: var(--font-roboto);
   color: var(--color-black);
   text-align: left;
+  
 }
 .details-wrapper {
   cursor: pointer;
-  border: 3px solid var(--color-black);
-  padding: var(--padding-xs) var(--padding-6xl);
+  padding: var(--padding-xs) var(--padding-xl);
+  border-radius: 50px;
+  justify-content: center;
+
+  padding: var(--padding-xs) var(--padding-smi);
   background-color: var(--color-thistle-200);
-  border-radius: var(--br-29xl);
+  border-radius: var(--br-22xl);
+  overflow: hidden;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  transition: all 0.1s ease-in-out;
+  box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.5);
+  background-color: #212A3E;
+  text-decoration: none;
+  color: white;
 }
 .details-wrapper:hover {
-  background-color: var(--color-thistle-100);
+  transform: scale(1.01);
+  box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.8);
+
+}
+.frame-parent11 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 .frame-parent11 {
   align-self: stretch;
   border-radius: var(--br-8xs);
+  background-color: var(--color-gainsboro-200);
+  padding: var(--padding-5xl) var(--padding-12xl);
+  justify-content: space-between;
+
+  align-self: stretch;
   background-color: var(--color-lavender);
-  display: flex;
-  flex-direction: column;
-  padding: var(--padding-4xl) var(--padding-13xl);
   align-items: flex-start;
-  justify-content: flex-start;
-  gap: var(--gap-mid);
+  gap: var(--gap-3xs);
+  border-radius: 20px;
+  transition: transform 0.3s ease-in-out;
+  background: radial-gradient(#d0d6e0,#67acb8);
+  box-shadow: 0px 0px 6px 6px rgba(0, 0, 0, 0.5);  
 }
 .details-frame {
   cursor: pointer;
-  border: 3px solid var(--color-black);
-  padding: var(--padding-xs) var(--padding-6xl);
-  background-color: var(--color-gainsboro-200);
+  padding: var(--padding-xs) var(--padding-xl);
+  border-radius: 50px;
+  justify-content: center;
+
+  padding: var(--padding-xs) var(--padding-smi);
+  background-color: var(--color-thistle-200);
   border-radius: var(--br-22xl);
+  overflow: hidden;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  transition: all 0.1s ease-in-out;
+  box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.5);
+  background-color: #212A3E;
+  text-decoration: none;
+  color: white;
 }
 .details-frame:hover {
-  background-color: var(--color-silver);
+  transform: scale(1.01);
+  box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.8);
+
 }
 .active-bookings-parent,
 .bookings4,
@@ -145,9 +176,17 @@
   align-self: stretch;
   border-radius: var(--br-8xs);
   background-color: var(--color-gainsboro-200);
-  padding: var(--padding-4xl) var(--padding-13xl);
+  padding: var(--padding-5xl) var(--padding-12xl);
+  justify-content: space-between;
+
+  align-self: stretch;
+  background-color: var(--color-lavender);
   align-items: flex-start;
-  gap: var(--gap-mid);
+  gap: var(--gap-3xs);
+  border-radius: 20px;
+  transition: transform 0.3s ease-in-out;
+  background: radial-gradient(#d0d6e0,#9BA4B5);
+  
 }
 .active-bookings-parent,
 .bookings4 {

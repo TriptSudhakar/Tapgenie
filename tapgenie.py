@@ -4,13 +4,14 @@ from flask import Flask, render_template, url_for, flash, redirect, request, ses
 from forms import RegistrationForm, LoginForm, RegistrationFormP, LoginFormP
 import re , math
 from datetime import datetime
+import requests
 
 app = Flask(__name__,template_folder='templates',static_folder='static')
 
 app.config['SECRET_KEY'] = '5791628bb0b13ce0c676dfde280ba245'
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'vidushi'
+app.config['MYSQL_PASSWORD'] = 'dummypwd'
 app.config['MYSQL_DB'] = 'tapgenie'
 mysql = MySQL(app)
 
@@ -139,22 +140,31 @@ def index2():
     msg = ''
     if 'loggedin' in session:
         service_id = request.args.get('id')
+        category = service_category(service_id)
         cursor=mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cursor.execute('SELECT * FROM service WHERE Service_ID = %s',(service_id, ))
         service = cursor.fetchone()
+        redirect_url = ""
+        if category == "Beauty and Wellness": redirect_url = "bandw"
+        elif category == "Home Cleaning": redirect_url = "homec"
+        elif category == "Home Repair": redirect_url = "homerep"
+        elif category == "Appliance Repair": redirect_url = "apprep"
+        elif category == "Home Painting": redirect_url = "paint"
+        elif category == "Disinfection and Pest": redirect_url = "pest"
         if request.method == 'POST' and 'datepicker' in request.form and 'color' in request.form:
             date = request.form['datepicker']
             slot = request.form['color']
             p = service['profession']
-            cursor.execute('SELECT pra.name, pra.mobile_no, pra.profession, pra.email_ID, pra.password, pra.Professional_ID, pra.rating FROM professional pra, appointments ap, service sr WHERE (((ap.appointment_date != %s AND ap.appointment_slot != %s) AND pra.profession = %s) AND (ap.professional_ID = pra.professional_ID)) UNION SELECT * FROM professional WHERE professional_ID NOT IN (SELECT Professional_ID FROM appointments) AND profession = %s',(date,slot,p,p))
+            # cursor.execute('SELECT * FROM professional')
+            cursor.execute('SELECT pra.name, pra.mobile_no, pra.profession, pra.email_ID, pra.password, pra.professional_ID, pra.Rating FROM professional pra, appointments ap, service sr WHERE (((ap.appointment_date != %s OR ap.appointment_slot != %s) AND pra.profession = %s) AND (ap.professional_ID = pra.professional_ID)) UNION SELECT * FROM professional WHERE professional_ID NOT IN (SELECT Professional_ID FROM appointments) AND profession = %s',(date,slot,p,p))
             professionals = cursor.fetchall()
-            return render_template('index-template.html',service = service,professionals=professionals,date=date,slot=slot)
+            return render_template('index-template.html', rurl = redirect_url,service = service,professionals=professionals,date=date,slot=slot)
         else:
             msg = 'Please fill out the form !'
             professionals={}
             date="2024-01-01"
             slot=1
-            return render_template('index-template.html',service=service,professionals=professionals,date=date,slot=slot)
+            return render_template('index-template.html', rurl = redirect_url,service=service,professionals=professionals,date=date,slot=slot)
     return redirect(url_for('login'))
    
 @app.template_filter('service_name')
@@ -164,14 +174,28 @@ def service_name(id):
     service = cursor.fetchone()
     return service['Service_name']
 
-@app.route("/bookings")
+@app.route("/bookings",methods=['GET', 'POST'])
 def bkc():
-    cursor=mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-    cursor.execute('SELECT * FROM appointments WHERE customer_ID = % s AND appointment_date >= CURRENT_DATE()', (session['id'], ))
-    active_bookings = cursor.fetchall()
-    cursor.execute('SELECT * FROM appointments WHERE customer_ID = % s AND appointment_date < CURRENT_DATE()', (session['id'], ))
-    past_bookings = cursor.fetchall()
-    return render_template('booking-template.html',active_bookings=active_bookings,past_bookings=past_bookings)
+    if 'loggedin' in session:
+        # if request.method == 'POST':
+        #     text_rev = request.form['text_rev']
+        #     # rate5 = request.form['rate-5']
+        #     prof_id = request.args.get('id')
+        #     cursor=mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+            
+        #     cursor.execute('INSERT INTO review VALUES (DEFAULT, % s, % s, %s, %s,%s)', (3,prof_id,session['id'],text_rev,translate(text_rev)))
+        #     mysql.connection.commit()
+            # slot = request.form['color']
+            # p = service['profession']
+
+
+        cursor=mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('SELECT * FROM appointments a JOIN professional p USING (professional_ID) WHERE a.customer_ID = %s AND a.appointment_date >= CURRENT_DATE()', (session['id'], ))
+        active_bookings = cursor.fetchall()
+        cursor.execute('SELECT * FROM appointments a JOIN professional p USING (professional_ID) WHERE a.customer_ID = %s AND a.appointment_date < CURRENT_DATE()', (session['id'], ))
+        past_bookings = cursor.fetchall()
+        return render_template('booking-template.html',active_bookings=active_bookings,past_bookings=past_bookings)
+    return redirect(url_for('login'))
 
 @app.route("/myprofile")
 def mpc():
@@ -304,6 +328,40 @@ def mpp():
         account = cursor.fetchone()   
         return render_template('my-profile-of-professional.html',account=account)
     return redirect(url_for('loginP'))
+
+@app.route("/reviews")
+def review():
+    if 'loggedin' in session:
+        date = request.args.get('date')
+        slot = request.args.get('slot')
+        sid = request.args.get('sid')
+        pid = request.args.get('pid')
+        pname =request.args.get('pname')
+        lang =request.args.get('lang')
+        # new = request.args.get('smth')
+        # cid = session['id']
+
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    
+
+        cursor.execute('SELECT * FROM review JOIN customer USING (customer_ID) WHERE professional_ID = % s', (pid, ))
+        revs = cursor.fetchall()
+        category = service_category(sid)
+        redirect_url = ""
+        if category == "Beauty and Wellness": redirect_url = "bandw"
+        elif category == "Home Cleaning": redirect_url = "homec"
+        elif category == "Home Repair": redirect_url = "homerep"
+        elif category == "Appliance Repair": redirect_url = "apprep"
+        elif category == "Home Painting": redirect_url = "paint"
+        elif category == "Disinfection and Pest": redirect_url = "pest"
+        
+
+    #     cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    #     cursor.execute('SELECT * FROM professional WHERE Professional_ID = % s', (session['id'], ))
+    #     account = cursor.fetchone()   
+        return render_template('reviews.html', rurl = redirect_url, sid = sid, pid = pid, date = date, slot = slot, revs = revs,pname=pname,lang=lang)
+    return redirect(url_for('loginP'))
+
     
 @app.route("/checkout",methods=['GET','POST'])
 def ckc():
@@ -313,14 +371,8 @@ def ckc():
         slot = request.args.get('slot')
         sid = request.args.get('sid')
         pid = request.args.get('pid')
-        if slot == 1:
-            stt = "9:00 am"
-        elif slot == 2:
-            stt = "12:00 pm"
-        elif slot == 3:
-            stt = "3:00 pm"
-        else:
-            stt = "6:00 pm" 
+        new = request.args.get('smth')
+
         cursor.execute('SELECT * FROM service WHERE Service_ID = % s', (sid, ))
         serve = cursor.fetchone() 
         cursor.execute('SELECT * FROM professional WHERE professional_ID = % s', (pid, ))
@@ -328,7 +380,16 @@ def ckc():
         cursor.execute('SELECT Price FROM service WHERE Service_ID = % s', (sid, ))
         price = dict(cursor.fetchone())['Price']
         if request.method=="POST":
-            cursor.execute('INSERT INTO appointments VALUES (DEFAULT, % s, %s, %s, % s, % s, % s, %s)', (date, stt, price,session['id'],sid, pid, slot))
+            if int(slot) == 1:
+                stt = "09:00:00"
+            elif int(slot)  == 2:
+                stt = "12:00:00"
+            elif int(slot)  == 3:
+                stt = "15:00:00"
+            else:
+                stt = "18:00:00" 
+
+            cursor.execute('INSERT INTO appointments VALUES (DEFAULT, % s, %s, %s, % s, % s, % s, %s)', (date, stt,new,session['id'],sid, pid, slot))
             mysql.connection.commit()
             return redirect(url_for('bkc'))
         return render_template('checkout.html',serve=serve,prof=prof,date=date,slot=slot)
@@ -340,6 +401,8 @@ def service_category(id):
     cursor.execute(f'SELECT Service_category FROM service WHERE Service_ID = {id}')
     service = cursor.fetchone()
     return service['Service_category']
+
+
 
 @app.template_filter('pname')
 def pname(id):
@@ -355,13 +418,27 @@ def pmobile(id):
     prof = cursor.fetchone()
     return prof['mobile_no']
 
-@app.route("/details")
+@app.route("/details",methods=['GET','POST'])
 def bkdc():
+    if request.method == 'POST':
+        text_rev = request.form['text_rev']
+        
+        prof_id = request.args.get('id')
+
+        cursor=mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+            
+        cursor.execute('INSERT INTO review VALUES (DEFAULT, % s, % s, %s, %s,%s)', (3,prof_id,session['id'],text_rev,(text_rev)))
+        mysql.connection.commit()
+        return redirect(url_for('bkc'))
+        
+        
+
     app_id = request.args.get('id')
     cursor=mysql.connection.cursor(MySQLdb.cursors.DictCursor)
     cursor.execute('SELECT * FROM appointments WHERE appointment_ID = %s',(app_id, ))
     appointment = cursor.fetchone()
     return render_template('bkdc_template.html',appointment=appointment)
+    # return redirect(url_for('bkc'))
 
 @app.template_filter('cname')
 def cname(id):
@@ -484,8 +561,27 @@ def update4P():
     else:
 
         return redirect(url_for('loginP'))
+def translate(qq):
+   
+    
+    url = "https://google-translate1.p.rapidapi.com/language/translate/v2"
 
+    payload = {
+        "q": qq,
+        "target": "hi",
+        "source": "en"
+    }
+    headers = {
+        "content-type": "application/x-www-form-urlencoded",
+        "Accept-Encoding": "application/gzip",
+        "X-RapidAPI-Key": "a076b6bd15mshc96b2a003fbf3dcp143dbbjsn67d80a142f2e",
+        "X-RapidAPI-Host": "google-translate1.p.rapidapi.com"
+    }
 
+    response = requests.post(url, data=payload, headers=headers)
+
+    return (response.json()['data']['translations'][0]['translatedText'])
+   
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host = "0.0.0.0",debug=True)

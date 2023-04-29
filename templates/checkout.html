@@ -1,3 +1,6 @@
+{% set pr = (serve.Price*prof.Rating)/2  %}
+{% set pr = pr | round | int %}
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -37,7 +40,7 @@
         </div>
         <div class="total-amount-1500-wrapper">
           <div class="time-1530-ist-container">
-            <span class="date">Amount : </span><span> ₹{{ serve.Price }}</span>
+            <span class="date">Amount : </span><span> ₹{{ pr }}</span>
           </div>
         </div>
         <div class="address-abcd-xyz-container">
@@ -50,8 +53,8 @@
           <div class="select-payment-method">Payment method</div>: Cash on Delivery
         </div>
         <!-- <div class="pay-now-wrapper"> -->
-          <form action="{{ url_for('ckc',slot=slot,date=date,sid=serve.Service_ID,pid=prof.professional_ID) }}" method="POST">
-            <input type="submit" class="pay-now-wrapper" value="Book now"></form>
+          <form action="{{ url_for('ckc',slot=slot,date=date,sid=serve.Service_ID,pid=prof.professional_ID,smth = serve.Price*prof.Rating/2) }}" method="POST">
+            <input type="submit" class="pay-now-wrapper" value="BOOK NOW"></form>
           <!-- </div> -->
       </div>
     </div>

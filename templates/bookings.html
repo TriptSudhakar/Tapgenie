@@ -2,6 +2,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
+    
+    <title>Star Rating Form </title>
+    <link rel="stylesheet"  href="{{ url_for('static', filename='review-input.css') }}"/>
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+
     <meta name="viewport" content="initial-scale=1, width=device-width" />
     <link rel="stylesheet" href="{{ url_for('static', filename='global.css') }}" />
     <link rel="stylesheet" href="{{ url_for('static', filename='bookings.css') }}" />
@@ -37,6 +44,23 @@
     </div>
 
     <script>
+      const btn = document.querySelector("button");
+      const post = document.querySelector(".post");
+      const widget = document.querySelector(".star-widget");
+      const editBtn = document.querySelector(".edit");
+      btn.onclick = ()=>{
+        widget.style.display = "none";
+        post.style.display = "block";
+        editBtn.onclick = ()=>{
+          widget.style.display = "block";
+          post.style.display = "none";
+        }
+        return false;
+      }
+    </script>
+
+    <script>
+
       var dashboardText = document.getElementById("dashboardText");
       if (dashboardText) {
         dashboardText.addEventListener("click", function (e) {

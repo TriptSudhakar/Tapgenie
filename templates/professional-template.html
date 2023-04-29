@@ -5,12 +5,12 @@
       <div class="haircut-container">
         <div class="haircut2">{{ e.Service_ID | service_name }}</div>
         <div class="date-3323-container">
-          <div class="haircut2">Date - {{ e.appointment_date }}</div>
-          <div class="haircut2">Time - {{ e.appointment_time }}</div>
+          <div class="haircut2">{{ e.appointment_date }}</div>
+          <div class="haircut2">{{ e.appointment_time }}</div>
         </div>
       </div>
       <button class="details-wrapper2">
-        <div class="details4"><a href="{{ url_for('bkpd', id = e.appointment_ID ) }}">Details</a></div>
+        <div class="details4"><a href="{{ url_for('bkpd', id = e.appointment_ID ) }}" style="text-decoration: none; color: white;">Details</a></div>
       </button>
     </div>
     {% endfor %}
@@ -21,12 +21,12 @@
       <div class="haircut-container">
         <div class="haircut2">{{ e.Service_ID | service_name }}</div>
         <div class="date-4323-container">
-          <div class="haircut2">Date - {{ e.appointment_date }}</div>
-          <div class="haircut2">Time - {{ e.appointment_time }}</div>
+          <div class="haircut2">{{ e.appointment_date }}</div>
+          <div class="haircut2">{{ e.appointment_time }}</div>
         </div>
       </div>
       <button class="details-wrapper4">
-        <div class="details4"><a href="{{ url_for('bkpd', id = e.appointment_ID ) }}">Details</a></div>
+        <div class="details4"><a href="{{ url_for('bkpd', id = e.appointment_ID ) }}" style="text-decoration: none; color: white;">Details</a></div>
       </button>
     </div>
     {% endfor %}

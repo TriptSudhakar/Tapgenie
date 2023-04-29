@@ -66,13 +66,14 @@
 .date-15032023-parent,
 .total-amount-1500-wrapper {
   align-self: stretch;
-  border-radius: var(--br-8xs);
-  background-color: var(--color-lavender);
+  border-radius: 20px;
   display: flex;
   flex-direction: row;
-  padding: var(--padding-5xl) var(--padding-6xl);
+  padding: var(--padding-5xl) var(--padding-12xl);
   align-items: center;
   justify-content: space-between;
+ 
+  background: radial-gradient(#d0d6e0,#9BA4B5);
 }
 .total-amount-1500-wrapper {
   align-items: flex-start;
@@ -104,10 +105,12 @@
 }
 .address-abcd-xyz-container {
   align-self: stretch;
-  border-radius: var(--br-8xs);
-  background-color: var(--color-lavender);
   padding: var(--padding-lgi) var(--padding-6xl);
   justify-content: space-between;
+
+  border-radius: 20px;
+  background-color: var(--color-lavender);
+  background: radial-gradient(#d0d6e0,#9BA4B5);
 }
 .select-payment-method {
   position: relative;
@@ -121,18 +124,23 @@
   text-align: center;
 }
 .pay-now-wrapper {
-  cursor: pointer;
-  border: 0;
-  padding: 18px 37px;
-  background-color: var(--color-limegreen);
-  border-radius: var(--br-3xs);
+  padding: var(--padding-5xl) var(--padding-12xl);
+  background-color: var(--color-thistle-200);
+  border-radius: var(--br-22xl);
+  overflow: hidden;
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
+  transition: all 0.1s ease-in-out;
+  box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.5);
+  background-color: #212A3E;
+  text-decoration: none;
+  color: white;
 }
 .pay-now-wrapper:hover {
-  background-color: var(--color-forestgreen);
+  transform: scale(1.01);
+  box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.8);
+
 }
 .checkout,
 .checkout-parent {

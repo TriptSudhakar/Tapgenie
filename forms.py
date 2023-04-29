@@ -1,3 +1,4 @@
+
 from flask_mysqldb import MySQL
 import MySQLdb.cursors
 import re
@@ -11,7 +12,7 @@ app = Flask(__name__,template_folder='templates',static_folder='static')
 
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'vidushi'
+app.config['MYSQL_PASSWORD'] = 'dummypwd'
 app.config['MYSQL_DB'] = 'tapgenie'
 mysql = MySQL(app)
 
@@ -150,18 +151,15 @@ class RegistrationFormP(FlaskForm):
     #                                  validators=[DataRequired(),Length(min=1, max=50)])
     profession = SelectField('Profession',
                              choices=[('Barber','Barber'),
-                                      ('Beautician','Beautician'),
                                       ('Masseuse','Masseuse'),
-                                      ('Pedicurist','Pedicurist'),
                                       ('Cleaner','Cleaner'),
-                                      ('Painter','Painter'),
                                       ('Plumber','Plumber'),
-                                      ('Electrician','Electrician'),
                                       ('Carpenter','Carpenter'),
-
+                                      ('Beautician','Beautician'),
+                                      ('Painter','Painter'),
+                                      ('Electrician','Electrician'),
                                       ('Technician','Technician'),
-                                      ('Hair Stylist','Hair Stylist'),
-                                      ('Insecticide Specialist','Insecticide Specialist'),
+                                      ('Exterminator','Exterminator'),
                                       ],
                              validators=[DataRequired(),Length(min=1, max=50)])
     submit = SubmitField('Sign Up')

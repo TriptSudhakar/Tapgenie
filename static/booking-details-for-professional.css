@@ -85,11 +85,15 @@
   align-items: center;
 }
 .category-beauty-and-wellness-container {
-  background-color: var(--color-lavender);
   padding: var(--padding-11xl);
-  justify-content: flex-start;
   text-align: left;
   font-size: var(--font-size-xl);
+  
+  border-radius: var(--br-8xs);
+  justify-content: space-between;
+
+  border-radius: 20px;
+  background: radial-gradient(#d0d6e0,#9BA4B5);
 }
 .booking-details-group {
   padding: 0 var(--padding-281xl);

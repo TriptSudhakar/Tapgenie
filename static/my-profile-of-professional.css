@@ -66,13 +66,13 @@
 }
 .username-johnysmith204-wrapper {
   align-self: stretch;
-  border-radius: var(--br-8xs);
-  background-color: var(--color-lavender);
+  border-radius: 20px;
+  background: radial-gradient(#d0d6e0,#9BA4B5);
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   padding: var(--padding-5xl) var(--padding-6xl);
   align-items: flex-start;
-  justify-content: flex-start;
+  justify-content: center;
 }
 .edit5 {
   position: relative;
@@ -104,7 +104,12 @@
   background-color: var(--color-lavender);
   padding: var(--padding-lgi) var(--padding-6xl);
   justify-content: space-between;
+  border-radius: 20px;
+  
+  background: radial-gradient(#d0d6e0,#9BA4B5);
+
 }
+
 .my-profile-group,
 .my-profile-of-professional {
   display: flex;

@@ -1,17 +1,20 @@
 {% extends "index.html" %}
 {% block prof %}
 {% for p in professionals %}
-{% set r = p.rating | float %}
+{% set r = p.Rating | float %}
 {% set s = service.Price | float %}
+{% set pr = (s*r)/2 %}
+{% set pr = pr | round | int %}
+
 <div class="frame-group">
   <div class="frame-container">
     <div class="john-smith-parent">
       <div class="service-haircut">{{ p.name }}</div>
       <div class="container">
-        <div class="service-haircut">₹{{ s }}</div>
+        <div class="service-haircut">₹{{ pr }}</div>
         <div class="frame-div">
-          <div class="service-haircut">{{ p.rating }}</div>
-          {% set val = p.rating %}
+          <div class="service-haircut">{{ p.Rating }}</div>
+          {% set val = p.Rating %}
           {% set n = val | greatest_integer %}
           {% for i in range(0,n) %}
           <img
@@ -23,10 +26,10 @@
         </div>
       </div>
     </div>
-    <div class="reviews">Reviews</div>
+    <div class="reviews"><a href ="{{url_for('review',sid = service.Service_ID, pid = p.professional_ID, date = date, slot = slot, pname= p.name)}}" style="text-decoration: underline; color: black;">Reviews</a></div>
   </div>
   <button class="book-now-wrapper">
-    <div class="book-now"><a href="{{ url_for('ckc',sid = service.Service_ID, pid = p.Professional_ID,  date = date, slot = slot)}}">Book Now</a></div>
+    <div class="book-now"><a href="{{ url_for('ckc',sid = service.Service_ID, pid = p.professional_ID,  date = date, slot = slot)}}" style="text-decoration: none; color: white;">Book Now</a></div>
   </button>
 </div>
 {% endfor %}

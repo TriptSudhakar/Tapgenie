@@ -3,14 +3,14 @@
     {% for e in active_bookings %}
     <div class="frame-parent11">
       <div class="haircut-parent">
-        <div class="haircut">{{ e.Service_ID | service_name }}</div>
+        <div class="haircut">{{ e.Service_ID | service_name }} : {{e.name}}</div>
         <div class="date-3323-parent">
-          <div class="haircut">Date - {{ e.appointment_date }}</div>
-          <div class="haircut">Time - {{ e.appointment_time }}</div>
+          <div class="haircut">{{ e.appointment_date }}</div>
+          <div class="haircut">{{ e.appointment_time }}</div>
         </div>
       </div>
       <button class="details-wrapper"">
-        <div class="details"><a href="{{ url_for('bkdc', id = e.appointment_ID ) }}">Details</a></div>
+        <div class="details"><a href="{{ url_for('bkdc', id = e.appointment_ID ) }}" style="text-decoration: none; color: white;">Details</a></div>
       </button>
     </div>
     {% endfor %}
@@ -19,14 +19,14 @@
     {% for e in past_bookings %}
     <div class="frame-parent13">
       <div class="haircut-parent">
-        <div class="haircut">{{ e.Service_ID | service_name }}</div>
+        <div class="haircut">{{ e.Service_ID | service_name }} : {{e.name}}</div>
         <div class="date-3323-parent">
-          <div class="haircut">Date - {{ e.appointment_date }}</div>
-          <div class="haircut">Time - {{ e.appointment_time }}</div>
+          <div class="haircut">{{ e.appointment_date }}</div>
+          <div class="haircut">{{ e.appointment_time }}</div>
         </div>
       </div>
       <button class="details-frame"">
-        <div class="details"><a href="{{ url_for('bkdc', id = e.appointment_ID ) }}">Details</a></div>
+        <div class="details"><a href="{{ url_for('bkdc', id = e.appointment_ID ) }}" style="text-decoration: none; color: white;">Details</a></div>
       </button>
     </div>
     {% endfor %}
